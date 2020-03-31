@@ -3,7 +3,7 @@ class Sslscan2Beta < Formula
   homepage "https://github.com/rbsec/sslscan"
   url "https://github.com/rbsec/sslscan/archive/2.0.0-beta1.tar.gz"
   version "2.0.0-beta1"
-  sha256 "4a77ddfd0dad740fa1f830feab24702f9ecea8881cfc26d08e82573a4d141023--"
+  sha256 "4a77ddfd0dad740fa1f830feab24702f9ecea8881cfc26d08e82573a4d141023"
   head "https://github.com/rbsec/sslscan.git"
 
   bottle do
