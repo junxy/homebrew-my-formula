@@ -1,4 +1,4 @@
-class YqAt2 < Formula
+class YqAT2 < Formula
   desc "Process YAML documents from the CLI"
   homepage "https://github.com/mikefarah/yq"
   url "https://github.com/mikefarah/yq/archive/2.4.1.tar.gz"
