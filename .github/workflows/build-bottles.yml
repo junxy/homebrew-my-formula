@@ -17,21 +17,22 @@ jobs:
       - name: Setup tap
         run: |
           rm -rf $(brew --repository ${{github.repository}})
+          mkdir -p $(brew --repository ${{github.repository}})
           ln -s $GITHUB_WORKSPACE $(brew --repository ${{github.repository}})
+          ls -al $(brew --repository ${{github.repository}})
+          brew tap
       - name: Build bottles
         run: |
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot \
-            --tap=homebrew/core \
-            --keep-old
-      - name: Copy bottles
-        if: always()
-        run: |
-          cp -a ~/bottles $GITHUB_WORKSPACE
-      - name: Upload bottles
-        if: always()
-        uses: actions/upload-artifact@v1
-        with:
-          name: bottles
-          path: bottles
+          brew test-bot
+      # - name: Copy bottles
+      #   if: always()
+      #   run: |
+      #     cp -a ~/bottles $GITHUB_WORKSPACE
+      # - name: Upload bottles
+      #   if: always()
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: bottles
+      #     path: bottles
